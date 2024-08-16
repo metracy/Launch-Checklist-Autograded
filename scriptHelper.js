@@ -69,6 +69,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
+        document.getElementById("bill").style.visibility = "visible";
     }
  }
  
