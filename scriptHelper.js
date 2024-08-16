@@ -3,7 +3,7 @@
 require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-    document.getElementById("missionTarget").innerHTML = `<h2>Mission Destination</h2>
+    document.getElementById("missionTarget").innerHTML = `<h2> Mission Destination </h2>
     <ol>
         <li>Name: ${name}</li>
         <li>Diameter: ${diameter}</li>
@@ -36,6 +36,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     
     //If the user submits a fuel level that is too low (less than 10,000 liters), change faultyItems to visible with an updated fuel status stating that there is not enough fuel for the journey. The text of the h2 element, launchStatus, should also change to “Shuttle not ready for launch” and the color should change to red.
 
+    // Cargo is good but Fuel is bad -> Cargo Green, Fuel Red, launchStatus Red
     if (fuelLevel < 10000 && cargoLevel < 10000) {
         list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "red";
@@ -44,6 +45,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         document.getElementById("bill").style.visibility = "hidden";
     }
+    // Cargo is bad and Fuel is good -> Cargo Red, Fuel Green, launchStatus Red
     if (cargoLevel >= 10000 && fuelLevel >= 10000) {
         list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "red";
@@ -54,6 +56,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         document.getElementById("bill").style.visibility = "hidden";
     }
+    // Cargo is bad and Fuel is bad -> Cargo Red, Fuel Red, launchStatus Red
     if (cargoLevel >= 10000 && fuelLevel < 10000) {
         list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "red";
@@ -64,6 +67,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         document.getElementById("bill").style.visibility = "hidden";
     }
+    // Cargo is Good and Fuel is Good -> Cargo Green, Fuel Green, launchStatus Green
     if (cargoLevel < 10000 && fuelLevel >= 10000) {
         list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "green";
