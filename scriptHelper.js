@@ -1,6 +1,6 @@
 // Write your helper functions here!
 
-require('cross-fetch/polyfill');
+//require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
@@ -18,31 +18,41 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  }
 
  function validateInput(testInput) {
-    if (testInput == "") {
+    if (testInput== "") {
         return "Empty";
     }
     else if (isNaN(Number(testInput))) {
-        return "Not a Number"
+        return "Not a Number";
     }
     else if (typeof Number(testInput) == "number") {
-        return "Is a Number"
+        return "Is a Number";
     }
 }
  
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    // check pilot, copilot, fuelLevel, and cargoLevel for correct typeof content
-    if (validateInput(pilot) == "Empty") {
-        
+function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
+    // check pilot, copilot, fuelLevel, and cargoLevel for correct content
+    let checkPilot = validateInput(pilot);
+    let checkCopilot = validateInput(copilot);
+    let checkFuelLevel = validateInput(fuelLevel);
+    let checkCargoLevel =  validateInput(cargoLevel);
+
+    if (checkPilot == "Empty") {
+        document.getElementById("faultyItems").style.visibility = "visible";
+        document.getElementById("pilotStatus").innerHTML = "Pilot name empty.";
     }
-    else if (validateInput(copilot) == "Empty") {
-        
+    if (checkCopilot == "Empty") {
+        document.getElementById("faultyItems").style.visibility = "visible";
+        document.getElementById("copilotStatus").innerHTML = "Co-pilot name empty.";
     }
-    else if (validateInput(fuelLevel) == "Not a Number") {
-        
+    if (checkFuelLevel == "Not a Number") {
+        document.getElementById("faultyItems").style.visibility = "visible";
+        document.getElementById("fuelStatus").innerHTML = "Fuel level is not a number";
     }
-    else if (validateInput(cargoLevel) == "Not a Number") {
-        
+    if (checkCargoLevel == "Not a Number") {
+        document.getElementById("faultyItems").style.visibility = "visible";
+        document.getElementById("cargoStatus").innerHTML = "Cargo level is not a Number";
     }
+
 
  }
  
