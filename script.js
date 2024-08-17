@@ -27,7 +27,7 @@ window.addEventListener("load", function() {
         }
         else if (checkCargoLevel == "Empty" || checkCargoLevel == 'Not a Number') {
             alert("cargoMass field missing or incorrectly entered!!");
-            event.preventDefault();    
+            event.preventDefault();
         }
         else {
             formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
@@ -54,4 +54,4 @@ window.addEventListener("load", function() {
         let myPlanet = pickPlanet(listedPlanets)
         addDestinationInfo(document, myPlanet.name, myPlanet.diameter, myPlanet.star, myPlanet.distance, myPlanet.moons, myPlanet.image)
     })
-});     
+});
