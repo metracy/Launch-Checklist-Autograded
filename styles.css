@@ -11,6 +11,7 @@ div {
    text-align: center;
    margin: auto;
    width: 25%;
+   height: 12%;
    border: 3px solid black;
    padding: 10px;
 }
@@ -18,8 +19,8 @@ div {
 #launchStatusCheck {
    background-color: #ECF0F1;
    text-align: center;
-   margin: 50px auto;
    width: 50%;
+   margin: 50px auto; 
    border: 3px solid black;
    padding: 10px;
 }
@@ -37,7 +38,14 @@ div {
    border: 3px solid black;
    padding: 10px;
 }
-
+#bill img {
+   width: 600px;
+   height: 400px;
+}
+#fail img {
+   width: 600px;
+   height: 400px;
+}
 button {
    background-color: #419f6a;
    border: none;
@@ -48,8 +56,16 @@ button {
    margin: 10px 0;
 }
 
-img {
+.imageDiv {
+   margin-left: 30px;
    display: block;
-   margin-left: auto;
-   margin-right: auto;
-}
+   width: 345px;
+   height: 220px;
+   padding: 10px;
+ }
+
+ .overlap {
+   top: -240px;
+   position: relative;
+   left: 0;
+ }

@@ -47,7 +47,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("bill").style.visibility = "hidden";
     }
     // Cargo is bad and Fuel is good -> Cargo Red, Fuel Green, launchStatus Red
-    if (cargoLevel >= 10000 && fuelLevel >= 10000) {
+    if (fuelLevel >= 10000 && cargoLevel >= 10000) {
         list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "red";
         document.getElementById("cargoStatus").style.color = "red";
@@ -59,7 +59,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("fail").style.visibility = "visible";
     }
     // Cargo is bad and Fuel is bad -> Cargo Red, Fuel Red, launchStatus Red
-    if (cargoLevel >= 10000 && fuelLevel < 10000) {
+    if (fuelLevel < 10000 && cargoLevel >= 10000) {
         list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "red";
         document.getElementById("cargoStatus").style.color = "red";
@@ -67,12 +67,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch";
         document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
-        document.getElementById("bill").style.visibility = "hidden";
-        document.getElementById("fail").style.visibility = "visible";
+        document.getElementByClassName("bill").style.visibility = "hidden";
+        document.getElementByClassName("fail").style.visibility = "visible";
 
     }
     // Cargo is Good and Fuel is Good -> Cargo Green, Fuel Green, launchStatus Green
-    if (cargoLevel < 10000 && fuelLevel >= 10000) {
+    if (fuelLevel >= 10000 && cargoLevel < 10000) {
         list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "green";
         document.getElementById("cargoStatus").style.color = "green";
@@ -81,6 +81,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
         // dance time!
+        document.getElementByClassName("fail").style.visibility = "hidden";
         document.getElementById("bill").style.visibility = "visible";
     }
  }
@@ -94,6 +95,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 }
 
 function pickPlanet(planets) {
+    // random index for planets
     planet = planets[Math.floor(Math.random() * planets.length)];
    return planet;
 }
