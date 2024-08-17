@@ -43,6 +43,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("fuelStatus").style.color = "red";
         document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
+        document.getElementById("fail").style.visibility = "visible";
         document.getElementById("bill").style.visibility = "hidden";
     }
     // Cargo is bad and Fuel is good -> Cargo Red, Fuel Green, launchStatus Red
@@ -55,6 +56,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         document.getElementById("bill").style.visibility = "hidden";
+        document.getElementById("fail").style.visibility = "visible";
     }
     // Cargo is bad and Fuel is bad -> Cargo Red, Fuel Red, launchStatus Red
     if (cargoLevel >= 10000 && fuelLevel < 10000) {
@@ -66,6 +68,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         document.getElementById("bill").style.visibility = "hidden";
+        document.getElementById("fail").style.visibility = "visible";
+
     }
     // Cargo is Good and Fuel is Good -> Cargo Green, Fuel Green, launchStatus Green
     if (cargoLevel < 10000 && fuelLevel >= 10000) {
@@ -76,6 +80,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
+        // dance time!
         document.getElementById("bill").style.visibility = "visible";
     }
  }
@@ -92,6 +97,8 @@ function pickPlanet(planets) {
     planet = planets[Math.floor(Math.random() * planets.length)];
    return planet;
 }
+
+
  module.exports.addDestinationInfo = addDestinationInfo;
  module.exports.validateInput = validateInput;
  module.exports.formSubmission = formSubmission;
