@@ -16,8 +16,9 @@ span2 {
 }
 li:hover {
    background-color:rgba(0, 140, 255, 0.514);
+   font-weight: 900;
 }
- 
+
 #launchForm {
    background-color: #ECF0F1;
    text-align: center;
@@ -77,7 +78,7 @@ button {
    height: 30px;
    margin: 10px 0;
 }
-
+/* https://jsfiddle.net/metracy/hdm6os9z/ css overlap images  */
 .imageDiv {
    margin-left: 10px;
    display: block;
