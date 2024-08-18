@@ -23,6 +23,7 @@ span2 {
    font-weight: 900;
    padding: 10px;
 }
+
 li:hover {
    background-color:rgba(0, 140, 255, 0.514);
 }
