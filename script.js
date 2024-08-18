@@ -11,7 +11,13 @@ window.addEventListener("load", function() {
         let checkCopilot = validateInput(copilotName);
         let checkFuelLevel = validateInput(fuelLevel);
         let checkCargoLevel = validateInput(cargoMass);
-
+        list.style.visibility = "hidden";
+        // hot fix for incorrect data on form after previously successful or not
+        document.getElementById("launchStatus").innerHTML = "Awaiting Information Before Launch";
+        document.getElementById("launchStatus").style.color = "black";
+        document.getElementById("fail").style.visibility = "hidden";
+        document.getElementById("bill").style.visibility = "hidden";
+        
         event.preventDefault();
         if (checkPilot == "Empty" || checkPilot == 'Is a Number') {
             alert("Pilot field missing or number entered!!!");
