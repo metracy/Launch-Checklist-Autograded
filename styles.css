@@ -6,14 +6,23 @@ div {
    text-align: left;
 }
 
+ol {
+   margin-left: 20px;
+   padding-left: 5%
+}
+
+li:hover {
+   background-color:grey;
+}
+ 
 #launchForm {
    background-color: #ECF0F1;
    text-align: center;
    margin: auto;
    width: 25%;
-   height: 12%;
+   height: 13%;
    border: 3px solid black;
-   padding: 10px;
+   padding: 20px;
 }
 
 #launchStatusCheck {
@@ -22,7 +31,7 @@ div {
    width: 50%;
    margin: 50px auto; 
    border: 3px solid black;
-   padding: 10px;
+   padding: 20px;
 }
 
 #missionTarget img {
@@ -30,6 +39,11 @@ div {
    max-height: 250px;
 }
 
+#missionTarget ol {
+   padding-right: 100px;
+   margin-left: 100px;
+   text-align: left;
+}
 #missionTarget {
    background-color: #ECF0F1;
    text-align: center;
@@ -38,6 +52,7 @@ div {
    border: 3px solid black;
    padding: 10px;
 }
+
 #bill img {
    width: 600px;
    height: 400px;
@@ -46,6 +61,7 @@ div {
    width: 600px;
    height: 400px;
 }
+
 button {
    background-color: #419f6a;
    border: none;
@@ -56,16 +72,18 @@ button {
    margin: 10px 0;
 }
 
+
 .imageDiv {
-   margin-left: 30px;
+   margin-left: 10px;
    display: block;
    width: 345px;
    height: 220px;
    padding: 10px;
+   align-items: relative;
  }
 
  .overlap {
    top: -240px;
    position: relative;
    left: 0;
- }
+ } 
