@@ -14,43 +14,35 @@ window.addEventListener("load", function() {
 
         event.preventDefault();
         if (checkPilot == "Empty" || checkPilot == 'Is a Number') {
-            alert("Pilot field missing or incorrectly entered!!!");
+            alert("Pilot field missing or number entered!!!");
             event.preventDefault();
         }
         else if (checkCopilot == "Empty" || checkCopilot == 'Is a Number') {
-            alert("Copilot field missing or incorrectly entered!!");
+            alert("Copilot field missing or number entered!!");
             event.preventDefault();
         }
         else if (checkFuelLevel == "Empty" || checkFuelLevel == 'Not a Number' ) {
-            alert("fuelLevel field missing or incorrectly entered!!");
+            alert("fuelLevel field missing or non-number entered!!");
             event.preventDefault();
         }
         else if (checkCargoLevel == "Empty" || checkCargoLevel == 'Not a Number') {
-            alert("cargoMass field missing or incorrectly entered!!");
+            alert("cargoMass field missing or non-number entered!!");
             event.preventDefault();
         }
         else {
             formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
         }
-    
-        console.log(document);
-        console.log(list);
-        console.log(pilotName);
-        console.log(copilotName);
-        console.log(fuelLevel);
-        console.log(cargoMass);
-
     });
     
 let listedPlanets;
 // Set listedPlanetsResponse equal to the value returned by calling myFetch()
 let listedPlanetsResponse = myFetch();
 listedPlanetsResponse.then(function (result) {
-    // error on graded test from putting <span> into code
+    // error on graded test from putting <span> into code - fixed and removed
     listedPlanets = result;
     }).then(function () {
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-        let destination = pickPlanet(listedPlanets)
-        addDestinationInfo(document, destination.name, destination.diameter, destination.star, destination.distance, destination.moons, destination.image)
+        let destination = pickPlanet(listedPlanets);
+        addDestinationInfo(document, destination.name, destination.diameter, destination.star, destination.distance, destination.moons, destination.image);
     })
 });

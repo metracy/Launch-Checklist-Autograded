@@ -10,20 +10,10 @@ li {
    margin-top: 5px;
 }
 
-span {
-   font-weight: 900;
-   text-align: right;
-   position: absolute;
-   text-align: right;
-   left: 50%;
-
-}
-
 span2 {
    font-weight: 900;
    padding: 10px;
 }
-
 li:hover {
    background-color:rgba(0, 140, 255, 0.514);
 }
