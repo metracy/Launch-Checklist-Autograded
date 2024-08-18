@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-    // Fixed DOM, was using 'click' and Submit button instead of form. // let form = document.querySelector("form");
+    // Fixed DOM query form, was using 'click' and Submit button instead of form. // let form = document.querySelector("form");
     let form = document.querySelector("form");
     form.addEventListener("submit", function (event) {
         let list = document.getElementById("faultyItems");
