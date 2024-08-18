@@ -46,12 +46,11 @@ let listedPlanets;
 // Set listedPlanetsResponse equal to the value returned by calling myFetch()
 let listedPlanetsResponse = myFetch();
 listedPlanetsResponse.then(function (result) {
+    // error on graded test from putting <span> into code
     listedPlanets = result;
-    console.log(listedPlanets);
     }).then(function () {
-        console.log(listedPlanets);   
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-        let myPlanet = pickPlanet(listedPlanets)
-        addDestinationInfo(document, myPlanet.name, myPlanet.diameter, myPlanet.star, myPlanet.distance, myPlanet.moons, myPlanet.image)
+        let destination = pickPlanet(listedPlanets)
+        addDestinationInfo(document, destination.name, destination.diameter, destination.star, destination.distance, destination.moons, destination.image)
     })
 });
